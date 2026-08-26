@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  精卫填海 (Jing Wei Fills the Sea) - About.xml
+  作者: PooiWoop
+  适用于 RimWorld 1.6
+
+  灵感来自中国成语"精卫填海"——殖民者可使用"挖掘"(Mining) 工作类型，
+  以较高工作量（默认约 4 个游戏日，可调）将水格变为陆地。
+-->
+<ModMetaData>
+  <!-- packageId: 必须全小写、无空格、全局唯一。格式: 作者名.mod名 -->
+  <packageId>pooiwoop.jingweifillssea</packageId>
+
+  <!-- 显示名称（在 Mod 列表与存档兼容性界面显示） -->
+  <name>精卫填海 (JingWeiFillsSea)</name>
+
+  <!-- 作者名 -->
+  <author>PooiWoop</author>
+
+  <!-- 支持的游戏版本 -->
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+
+  <!-- 必须依赖 Harmony（C# mod 几乎都需要） -->
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+
+  <!-- Mod 描述 -->
+  <description>受"精卫填海"启发，殖民者可使用"挖掘"(Mining) 工作类型，以较高工作量（默认约 4 个游戏日，可在 Mod 设置中调整）将水域格子变为陆地（土壤）。支持浅水、深水、咸水、河流及沼泽。完成后该标记建筑会自动消失，留下陆地。</description>
+</ModMetaData>

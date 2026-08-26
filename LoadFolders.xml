@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  精卫填海 - LoadFolders
+  ===========================================
+  告诉 RimWorld 应该加载哪些目录。
+-->
+<loadFolders>
+  <li IfModActive="brrainz.harmony">/</li>
+</loadFolders>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  精卫填海 - WorkGiver 定义
+  ===========================================
+
+  与愚公填山的 WorkGiver 配置相同，但指向 JWFH 的命名空间。
+  - workType = Mining: 让殖民者用"挖掘"工作类型建造水体填充标记
+  - giverClass = JWFH.WorkGiver_FillSea: C# 自定义逻辑
+-->
+<Defs>
+
+  <WorkGiverDef>
+    <defName>JWFH_FillSea</defName>
+    <label>fill sea</label>
+    <giverClass>JWFH.WorkGiver_FillSea</giverClass>
+    <workType>Mining</workType>
+    <priorityInType>100</priorityInType>
+    <verb>fill</verb>
+    <gerund>filling</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <nonColonistsCanDo>true</nonColonistsCanDo>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+
+</Defs>

@@ -96,8 +96,6 @@ namespace JWFH
             if (!isWater)
             {
                 Log.Warning($"[精卫填海] 当前地形 {currentTerrain?.defName} 不是水/沼泽，跳过填充。");
-                if (Props.destroySelfOnComplete)
-                    parent.Destroy(DestroyMode.Vanish);
                 return;
             }
 
@@ -113,11 +111,13 @@ namespace JWFH
 
             Log.Message($"[精卫填海] 已在 {cell} 将 {currentTerrain.defName} 替换为 {Props.ReplaceWithTerrain.defName}。");
 
-            // 完成后销毁标记本身
-            if (Props.destroySelfOnComplete)
-            {
-                parent.Destroy(DestroyMode.Vanish);
-            }
+            // 注意：这里【不能】同步 destroy 自身！
+            // 原版 Building.SpawnSetup 在跑完 ThingWithComps.SpawnSetup（内部会调用本 comp 的
+            // PostSpawnSetup）后，紧接着执行 base.Map.listerBuildings.Add(this)。
+            // 若在此销毁，thing.Map 会变成 null，原版那一行 ldfld 就会抛 NullReferenceException
+            // （表现为每放置/建造一个标记就爆一次 "Root level exception in OnGUI()"）。
+            // 销毁已交由 Patch_BuildingSpawnSetup_MarkerDestroy（Building.SpawnSetup 的
+            // Harmony Postfix）在 spawn 流程完整结束后再执行。
         }
 
         /// <summary>

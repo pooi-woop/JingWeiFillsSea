@@ -24,4 +24,19 @@
     <prioritizeSustains>true</prioritizeSustains>
   </WorkGiverDef>
 
+  <WorkGiverDef>
+    <defName>JWFH_Flood</defName>
+    <label>flood land</label>
+    <giverClass>JWFH.WorkGiver_Flood</giverClass>
+    <workType>Mining</workType>
+    <priorityInType>100</priorityInType>
+    <verb>flood</verb>
+    <gerund>flooding</gerund>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+    <nonColonistsCanDo>true</nonColonistsCanDo>
+    <prioritizeSustains>true</prioritizeSustains>
+  </WorkGiverDef>
+
 </Defs>

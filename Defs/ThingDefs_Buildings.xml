@@ -178,4 +178,77 @@
     </researchPrerequisites>
   </ThingDef>
 
+  <!--
+    深水标记（陆地 -> 深水体）
+    - 与"注水标记"方向一致、功能对齐：把陆地/任意地形灌成水
+    - 通过 CompProperties_FillToWater 的 convertToWaterDefName=WaterDeep 生成深水（不可通行）
+    - 无 PlaceWorker：可在任意可建造格子放置（尤其适合陆地、河岸）
+    - 建造完成瞬间，ThingComp (CompFillToWater) 把这一格变为深水（WaterDeep）
+    - 然后标记自动销毁，留下深水
+  -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>JWFH_DeepWaterFiller</defName>
+    <label>制造深水区</label>
+    <description>殖民者会以"挖掘"工作类型花费大量工作量，将这一格变为深水。放置位置不限（尤其适合陆地、河岸）。完成后标记自动消失。</description>
+
+    <!-- 占地尺寸 -->
+    <size>(1,1)</size>
+
+    <!-- 建筑菜单分类。此处放在 Structure (结构) 分类下 -->
+    <designationCategory>Structure</designationCategory>
+
+    <!-- 拖拽框选：使用 Fill2D 样式，支持 FilledRectangle（矩形框选）与 FilledOval（椭圆框选） -->
+    <drawStyleCategory>Fill2D</drawStyleCategory>
+
+    <statBases>
+      <MaxHitPoints>50</MaxHitPoints>          <!-- 耐久度（标记很脆弱） -->
+      <WorkToBuild>48000</WorkToBuild>          <!-- 高工作量，与注水标记一致 -->
+      <Flammability>0</Flammability>            <!-- 不可燃 -->
+      <Beauty>-3</Beauty>                       <!-- 略影响美观 -->
+      <Mass>1</Mass>
+    </statBases>
+
+    <!-- 材料成本。设为空表示无需材料，只需工作量 -->
+    <costList>
+    </costList>
+
+    <!-- 通过性: Standable（标记本身不阻挡通行） -->
+    <passability>Standable</passability>
+    <fillPercent>0.05</fillPercent>
+
+    <!-- 是否可旋转 -->
+    <rotatable>false</rotatable>
+
+    <!-- 贴图：复用"注水标记"占位贴图（标记建造完成后立即销毁，仅建造期间显示）。 -->
+    <graphicData>
+      <texPath>Buildings/FloodFiller</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shaderType>CutoutComplex</shaderType>
+      <drawSize>(0.5,0.5)</drawSize>
+    </graphicData>
+
+    <!-- 1.6 起 blueprintGraphicData 字段已移除，蓝图外观自动由 graphicData 派生，不再单独声明 -->
+
+    <uiIconPath>Buildings/FloodFiller</uiIconPath>
+
+    <!--
+      ThingComp: 自定义组件（复用 CompProperties_FillToWater，指定生成深水）
+      - convertToWaterDefName: 完成后变成哪种水体地形（这里是 WaterDeep 深水）
+      - destroySelfOnComplete: 完成后是否销毁标记本身
+    -->
+    <comps>
+      <li Class="JWFH.CompProperties_FillToWater">
+        <convertToWaterDefName>WaterDeep</convertToWaterDefName>
+        <destroySelfOnComplete>true</destroySelfOnComplete>
+      </li>
+    </comps>
+
+    <!-- 无 placeWorkers：可放置在任意格子，符合"到处制造深水"的意图 -->
+
+    <!-- 研究前置。需要先研究 JWFH_WaterFilling 才能建造此标记 -->
+    <researchPrerequisites>
+      <li>JWFH_WaterFilling</li>
+    </researchPrerequisites>
+  </ThingDef>
+
 </Defs>

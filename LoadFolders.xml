@@ -5,5 +5,7 @@
   告诉 RimWorld 应该加载哪些目录。
 -->
 <loadFolders>
-  <li IfModActive="brrainz.harmony">/</li>
+  <v1.6>
+    <li IfModActive="brrainz.harmony">/</li>
+  </v1.6>
 </loadFolders>

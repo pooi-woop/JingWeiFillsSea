@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  精卫填海 (Jing Wei Fills the Sea) - About.xml
+  作者: PooiWoop
+  适用于 RimWorld 1.6
+
+  灵感来自中国成语"精卫填海"——殖民者可使用"挖掘"(Mining) 工作类型，
+  以较高工作量（默认约 4 个游戏日，可调）将水格变为陆地。
+-->
+<ModMetaData>
+  <!-- packageId: 必须全小写、无空格、全局唯一。格式: 作者名.mod名 -->
+  <packageId>pooiwoop.jingweifillssea</packageId>
+
+  <!-- 显示名称（在 Mod 列表与存档兼容性界面显示） -->
+  <name>精卫填海 (JingWeiFillsSea)</name>
+
+  <!-- 作者名 -->
+  <author>PooiWoop</author>
+
+  <!-- 支持的游戏版本 -->
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+
+  <!-- 必须依赖 Harmony（C# mod 几乎都需要） -->
+  <modDependencies>
+    <li>
+      <packageId>brrainz.harmony</packageId>
+      <displayName>Harmony</displayName>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2009463077</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+
+  <!-- Mod 描述 -->
+  <description>Inspired by the Chinese idiom "Jing Wei Fills the Sea". Colonists use the Mining work type to terraform terrain. Includes three marker buildings:
+
+  1. Water Filler (Fill Sea): Converts shallow/deep/ocean water, rivers, and marsh into land (Soil). Can only be placed on water/marsh tiles.
+  2. Flood Filler (Flood Land): Converts any buildable terrain into shallow water. No placement restrictions.
+  3. Deep Water Filler: Converts any buildable terrain into deep water (impassable). No placement restrictions.
+
+  All markers have a high default work amount (~4 in-game days), adjustable via the mod settings multiplier. Markers auto-destroy upon completion, leaving the transformed terrain.
+
+  ---
+
+  受"精卫填海"启发，殖民者可使用"挖掘"(Mining) 工作类型进行地形改造。包含三种标记建筑：
+
+  1. 水体填充标记（填海）：将浅水、深水、咸水、河流及沼泽变为陆地（土壤），只能放置在水体上。
+  2. 注水标记（灌水）：将任意可建造地形变为浅水，不限放置位置。
+  3. 制造深水区：将任意可建造地形变为深水（不可通行），不限放置位置。
+
+  三种标记默认工作量均较高（约 4 个游戏日），可在 Mod 设置中统一调整工作量倍率。完成后标记自动消失，留下改造后的地形。</description>
+</ModMetaData>

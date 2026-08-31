@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  精卫填海 - 研究项目定义
+  ===========================================
+  与愚公填山类似，定义一个研究前置项目。
+  baseCost 设为 3000（比愚公填山的 2000 略高，因为填海更困难）。
+-->
+<Defs>
+
+  <ResearchProjectDef>
+    <defName>JWFH_WaterFilling</defName>
+    <label>精卫填海</label>
+    <description>研究如何通过大量挖掘工作将水体变为陆地。受"精卫填海"启发。</description>
+    <baseCost>200</baseCost>
+    <techLevel>Industrial</techLevel>
+    <prerequisites>
+      <li>Stonecutting</li>
+    </prerequisites>
+  </ResearchProjectDef>
+
+</Defs>

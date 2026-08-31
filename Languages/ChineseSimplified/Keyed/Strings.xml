@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  精卫填海 - 中文本地化字符串
+  ===========================================
+-->
+<LanguageData>
+
+  <JWFH.SettingsCategory>精卫填海</JWFH.SettingsCategory>
+  <JWFH.WorkAmountMultiplierLabel>工作量倍率: {0}  (预估 {1} 个游戏日)</JWFH.WorkAmountMultiplierLabel>
+  <JWFH.WorkAmountMultiplierHint>提示: 倍率=1.0 时为标准 4 个游戏日；0.5=2 日；2.0=8 日。</JWFH.WorkAmountMultiplierHint>
+
+</LanguageData>
